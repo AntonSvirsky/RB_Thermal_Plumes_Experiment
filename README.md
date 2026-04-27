@@ -56,3 +56,8 @@ Analysis/<video_name>/
 ├── cross-section imgs/
 └── cross-section data/
 ```
+
+## Author 
+Anton Svirsky; 
+Technion – Israel Institute of Technology;  
+anton.sv@campus.technion.ac.il
