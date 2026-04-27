@@ -4,16 +4,15 @@
 #                                                               #
 #################################################################
 # Input parameters
-vido_file    = 'rb_t40,0_b15,5_2.mp4'
-vido_file    = 'rb_t30,0_b15,5_2.mp4'
+vido_file    = 'test_video.mp4' #name of video file located in `video_dir`
 
-video_dir    = "C:/Users/antonsv/OneDrive - Technion/Teaching/Lab 5/RB Large Cell cv/Movies/"
-analysis_dir = "C:/Users/antonsv/OneDrive - Technion/Teaching/Lab 5/RB Large Cell cv/Analysis/"
+video_dir    = "C:/Users/antonsv/RB_Large_Cell_cv/Movies/"   # directory with raw video
+analysis_dir = "C:/Users/antonsv/RB_Large_Cell_cv/Analysis/" # output directory for analysis files
 
 # Output parameters
 dst_w    = 600   # width (pixels) of output image
 dst_h    = 600   # height (pixels) of output image
-cs_list  = [50,] # x location (pixels) of cross-sections to record 
+cs_list  = [50,] # x location (pixels) of cross-sections to record (used if `manual_cross_section = False`)
 L_y      = 150   # height (cm) of the image (used to write dx on output images)  
 
 # Runtime options
@@ -25,32 +24,21 @@ save_output_video_org         = True # Save output video of original video
 save_output_video_flac        = True # Save output video of fluctuations
 
 # Default filter parameters for fluctuations 
-# refImage_gauss_R =  5 # Radius (pixels) of gaussian blur applied on reference image
-# gamma_filt_amp   = 10 # Linear gain applied to flactuaion image
-# gamma_filt_exp   =  1 # Exponential gain applied to flactuaion image
-# diff_x_gauss_R   = 31 # Horizontal scale of gaussian blur applied to flactuations
-# diff_y_gauss_R   =  1 # Vertical scale of gaussian blur applied to flactuations
-# flac_color_map   = False # Use heat style map for fluctuations (only visual)
+# (adjustable during runtime if `manual_parameter_calibration  = True`)
+refImage_gauss_R  =  5.0 # Radius (pixels) of gaussian blur applied on reference image
+gamma_filt_amp    =  5.0 # Linear gain applied to flactuaion image
+gamma_filt_exp    =  0.9 # Exponential gain applied to flactuaion image
+diff_x_gauss_R    =  5.0 # Horizontal scale of gaussian blur applied to flactuations
+diff_y_gauss_R    =  1.0 # Vertical scale of gaussian blur applied to flactuations
+flac_color_map     = False # Use heat style map for fluctuations (only visual)
 
 # Default filter parameters for treshold mask
-# bg_sub    = True # Apply MOG algorythm for back ground subtractor 
-# th_cutoff = 40   # [0-255] Cutoff value for mask 
-# erod_k    = 1    # Size of the erosion kernel applied to tresholded image
-# dilate_k  = 1    # Size of the dialation kernel applied to tresholded image
+# (adjustable during runtime if `manual_parameter_calibration  = True`)
+bg_sub    = True # Apply MOG algorythm for back ground subtractor 
+th_cutoff = 40   # [0-255] Cutoff value for mask 
+erod_k    = 3    # Size of the erosion kernel applied to tresholded image
+dilate_k  = 3    # Size of the dialation kernel applied to tresholded image
 
-
-refImage_gauss_R = 3
-gamma_filt_amp = 5
-gamma_filt_exp = 0.9
-diff_x_gauss_R = 5
-diff_y_gauss_R = 5
-
-bg_sub    = True
-th_cutoff = 40
-erod_k = 3
-dilate_k = 3
-
-flac_color_map   = False
 #################################################################
 #                                                               #
 #                   CODE STARTS HERE                            #
